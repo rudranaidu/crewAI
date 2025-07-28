@@ -98,6 +98,7 @@ crew = Crew(
 result = crew.kickoff()
 print(result)
 
+
 ## 🧪 Best Practices for Agent Design
 
 - ✅ **Clear Role Definition** – Assign each agent a specific, meaningful role.
@@ -112,6 +113,7 @@ print(result)
   - Use **LLaMA 3.1** for orchestration  
   - Use **GPT-4/Claude** for advanced reasoning or creativity
 ---
+
 ## 📈 Evaluating Crew Performance
 
 - Define **success metrics** per task.
