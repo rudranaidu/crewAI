@@ -98,49 +98,44 @@ crew = Crew(
 result = crew.kickoff()
 print(result)
 
-🧪 Best Practices for Agent Design
-✅ Clear Role Definition – Assign each agent a specific, meaningful role.
+## 🧪 Best Practices for Agent Design
 
-✅ Measurable Goals – Define quantifiable outputs to assess performance.
+- ✅ **Clear Role Definition** – Assign each agent a specific, meaningful role.
+- ✅ **Measurable Goals** – Define quantifiable outputs to assess performance.
+- ✅ **Relevant Backstory** – Provide context to enhance task understanding.
+- ✅ **Minimal Toolset** – Equip only necessary tools to each agent.
+- ✅ **Prompt Optimization** – Use clear prompts:
+  - Low temperature (0–0.5) → factual tasks  
+  - High temperature (0.6–1) → creative tasks
+- ✅ **Token Management** – Split large tasks to avoid token overflows.
+- ✅ **Model Selection** – Choose based on task complexity:
+  - Use **LLaMA 3.1** for orchestration  
+  - Use **GPT-4/Claude** for advanced reasoning or creativity
 
-✅ Relevant Backstory – Provide context to enhance task understanding.
+---
 
-✅ Minimal Toolset – Equip only necessary tools to each agent.
+## 📈 Evaluating Crew Performance
 
-✅ Prompt Optimization – Use clear prompts:
+- Define **success metrics** per task.
+- Run **A/B tests** with agent configurations.
+- Collect **human feedback** on subjective tasks.
+- **Review errors** and refine prompts or logic accordingly.
 
-Low temperature (0–0.5) → factual tasks
+---
 
-High temperature (0.6–1) → creative tasks
+## 🔁 Continuous Improvement Strategy
 
-✅ Token Management – Split large tasks to avoid token overflows.
+- Update agents with **performance feedback**.
+- Keep **knowledge bases** and **tools** current.
+- Refine **agent interactions** for better collaboration.
+- Stay informed on **LLM advancements**.
 
-✅ Model Selection – Choose based on task complexity:
+---
 
-Use LLaMA 3.1 for orchestration
+## 🤖 When to Use Crew vs. Flow
 
-Use GPT-4/Claude for advanced reasoning or creativity
-
-📈 Evaluating Crew Performance
-Define success metrics per task.
-
-Run A/B tests with agent configurations.
-
-Collect human feedback on subjective tasks.
-
-Review errors and refine prompts or logic accordingly.
-
-🔁 Continuous Improvement Strategy
-Update agents with performance feedback.
-
-Keep knowledge bases and tools current.
-
-Refine agent interactions for better collaboration.
-
-Stay informed on LLM advancements.
-
-When to Use Crew vs. Flow
-Use Case	Recommended
-Creative collaboration, autonomy	CrewAI
-Deterministic, auditable tasks	Flow
-Combination of both needs	Crew + Flow
+| Use Case                          | Recommended   |
+|----------------------------------|----------------|
+| Creative collaboration, autonomy | **CrewAI**     |
+| Deterministic, auditable tasks   | **Flow**       |
+| Combination of both needs        | **Crew + Flow**|
