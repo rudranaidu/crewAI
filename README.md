@@ -111,9 +111,7 @@ print(result)
 - ✅ **Model Selection** – Choose based on task complexity:
   - Use **LLaMA 3.1** for orchestration  
   - Use **GPT-4/Claude** for advanced reasoning or creativity
-
 ---
-
 ## 📈 Evaluating Crew Performance
 
 - Define **success metrics** per task.
