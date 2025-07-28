@@ -64,3 +64,83 @@ Each agent in CrewAI has:
 ```python
 from crewai import Agent, Task, Crew, Process
 from crewai_tools import SerperDevTool
+
+## 2. Create Agents
+
+```python
+from crewai import Agent
+from crewai_tools import SerperDevTool
+
+researcher = Agent(
+    role="Research Analyst",
+    goal="Collect data on latest AI trends",
+    backstory="An expert researcher with deep knowledge of emerging technologies.",
+    tools=[SerperDevTool()]
+)
+3. Create Tasks
+from crewai import Task
+
+research_task = Task(
+    description="Analyze top 5 AI frameworks in 2025",
+    expected_output="Detailed report with pros, cons, and use cases",
+    agent=researcher
+)
+
+4. Define the Crew and Execute
+from crewai import Crew, Process
+
+crew = Crew(
+    agents=[researcher],
+    tasks=[research_task],
+    process=Process.sequential  # or Process.hierarchical
+)
+
+result = crew.kickoff()
+print(result)
+
+🧪 Best Practices for Agent Design
+✅ Clear Role Definition – Assign each agent a specific, meaningful role.
+
+✅ Measurable Goals – Define quantifiable outputs to assess performance.
+
+✅ Relevant Backstory – Provide context to enhance task understanding.
+
+✅ Minimal Toolset – Equip only necessary tools to each agent.
+
+✅ Prompt Optimization – Use clear prompts:
+
+Low temperature (0–0.5) → factual tasks
+
+High temperature (0.6–1) → creative tasks
+
+✅ Token Management – Split large tasks to avoid token overflows.
+
+✅ Model Selection – Choose based on task complexity:
+
+Use LLaMA 3.1 for orchestration
+
+Use GPT-4/Claude for advanced reasoning or creativity
+
+📈 Evaluating Crew Performance
+Define success metrics per task.
+
+Run A/B tests with agent configurations.
+
+Collect human feedback on subjective tasks.
+
+Review errors and refine prompts or logic accordingly.
+
+🔁 Continuous Improvement Strategy
+Update agents with performance feedback.
+
+Keep knowledge bases and tools current.
+
+Refine agent interactions for better collaboration.
+
+Stay informed on LLM advancements.
+
+When to Use Crew vs. Flow
+Use Case	Recommended
+Creative collaboration, autonomy	CrewAI
+Deterministic, auditable tasks	Flow
+Combination of both needs	Crew + Flow
